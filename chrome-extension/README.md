@@ -1,4 +1,4 @@
-# For The Love Of The Game Extension
+# Mini project 2
 
 Chrome side-panel client for the Darija translator backend.
 
