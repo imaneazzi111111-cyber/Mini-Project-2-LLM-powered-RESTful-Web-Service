@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For The Love Of The Game</title>
+    <link rel="stylesheet" href="./sidepanel.css?v=8">
+</head>
+<body>
+    <main class="experience" id="experience">
+        <section class="shell">
+            <section class="welcome">
+                <div class="welcome-row">
+                    <span class="spark-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 1.5v21M4.6 4.6l14.8 14.8M1.5 12h21M4.6 19.4 19.4 4.6M7.2 2.9l9.6 18.2M2.9 7.2l18.2 9.6M16.8 2.9 7.2 21.1M2.9 16.8l18.2-9.6"></path>
+                        </svg>
+                    </span>
+                    <h1>Welcome, player</h1>
+                </div>
+            </section>
+
+            <section class="chat-log" id="chat-log"></section>
+
+            <form id="translator-form" class="composer">
+                <label class="composer-shell" id="composer-shell" for="prompt-input">
+                    <textarea id="prompt-input" name="prompt" rows="1" placeholder="How can I help you today?"></textarea>
+                    <button class="send-button" id="send-button" type="submit" aria-label="Translate">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 5v14M7 10l5-5 5 5"></path>
+                        </svg>
+                    </button>
+                </label>
+            </form>
+
+            <p class="status-line" id="status-text" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <script src="./sidepanel.js?v=8"></script>
+</body>
+</html>

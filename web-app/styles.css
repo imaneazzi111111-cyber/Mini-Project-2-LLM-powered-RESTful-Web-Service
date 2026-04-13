@@ -1,0 +1,346 @@
+:root {
+    --bg: #262521;
+    --panel: #302e2a;
+    --panel-strong: #37342f;
+    --line: rgba(255, 255, 255, 0.05);
+    --line-strong: rgba(255, 255, 255, 0.08);
+    --text: #d7d2c7;
+    --muted: #8d877f;
+    --accent: #d77654;
+    --accent-strong: #bb6444;
+    --accent-soft: rgba(215, 118, 84, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Manrope", sans-serif;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+.experience {
+    min-height: 100vh;
+    padding: 2rem 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: padding-top 260ms ease;
+}
+
+.experience.has-messages {
+    align-items: flex-start;
+    padding-top: 4.75rem;
+}
+
+.shell {
+    width: min(100%, 920px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome {
+    margin: 0 0 2rem;
+    transition: transform 220ms ease, opacity 220ms ease, margin 220ms ease;
+}
+
+.experience.has-messages .welcome {
+    margin-bottom: 1.35rem;
+    transform: scale(0.86);
+    opacity: 0.78;
+}
+
+.welcome-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.95rem;
+}
+
+.spark-icon {
+    width: 2.55rem;
+    height: 2.55rem;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    flex: 0 0 auto;
+}
+
+.spark-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.35;
+    stroke-linecap: round;
+}
+
+.welcome h1 {
+    margin: 0;
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3.2rem, 6vw, 4.9rem);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.chat-log {
+    width: min(100%, 820px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    margin-bottom: 1rem;
+}
+
+.chat-log:empty {
+    display: none;
+}
+
+.message {
+    width: 100%;
+}
+
+.message.user-message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message.user-message .message-body {
+    max-width: min(72%, 24rem);
+    padding: 1rem 1.15rem;
+    border-radius: 1.4rem;
+    background: var(--panel-strong);
+    color: #f1ede5;
+    line-height: 1.6;
+    font-size: 0.97rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.message.assistant-message {
+    display: grid;
+    grid-template-columns: 1.8rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0.9rem;
+}
+
+.message-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: 0.12rem;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+}
+
+.message-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.35;
+    stroke-linecap: round;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.message.assistant-message .message-body {
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 0.98rem;
+    white-space: pre-wrap;
+}
+
+.message-actions {
+    display: flex;
+    gap: 0.55rem;
+}
+
+.action-button {
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 0.9rem;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    color: #c3beb5;
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.action-button:hover:not(:disabled) {
+    background: var(--accent-soft);
+    color: #f0e7e1;
+    transform: translateY(-1px);
+}
+
+.action-button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.action-button svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.composer {
+    width: min(100%, 820px);
+    margin: 0;
+}
+
+.composer-shell {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 5.65rem;
+    padding: 0.95rem 0.95rem 0.95rem 1.35rem;
+    border-radius: 1.95rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+textarea {
+    flex: 1;
+    width: 100%;
+    min-height: 1.5rem;
+    max-height: 7rem;
+    resize: none;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.98rem;
+    line-height: 1.45;
+    overflow-y: auto;
+}
+
+textarea::placeholder {
+    color: var(--muted);
+}
+
+.send-button {
+    flex: 0 0 auto;
+    width: 2.55rem;
+    height: 2.55rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    color: #91877d;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    cursor: pointer;
+}
+
+.send-button:disabled {
+    cursor: default;
+}
+
+.composer-shell.has-value .send-button {
+    background: var(--accent);
+    color: #fff5f0;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.composer-shell.has-value .send-button:hover {
+    background: var(--accent-strong);
+    transform: translateY(-1px);
+}
+
+.send-button svg {
+    width: 0.92rem;
+    height: 0.92rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.status-line {
+    width: min(100%, 820px);
+    min-height: 1rem;
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.status-line:empty {
+    display: none;
+}
+
+.fade-up {
+    animation: fadeUp 220ms ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 820px) {
+    .experience {
+        padding: 1.4rem 1rem 2rem;
+    }
+
+    .experience.has-messages {
+        padding-top: 3rem;
+    }
+
+    .welcome {
+        margin-bottom: 1.6rem;
+    }
+
+    .welcome h1 {
+        font-size: clamp(2.55rem, 10vw, 3.65rem);
+    }
+
+    .spark-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .composer-shell {
+        min-height: 5rem;
+        padding: 0.85rem 0.85rem 0.85rem 1rem;
+        border-radius: 1.7rem;
+    }
+
+    .message.user-message .message-body {
+        max-width: 84%;
+    }
+}

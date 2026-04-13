@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "For The Love Of The Game",
+  "version": "0.1.0",
+  "description": "Warm dark side-panel interface for sending English text to the Darija translator backend.",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "sidePanel",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open For The Love Of The Game"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}
