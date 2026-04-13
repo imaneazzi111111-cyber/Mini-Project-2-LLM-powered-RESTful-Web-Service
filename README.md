@@ -1,4 +1,4 @@
-# For The Love Of The Game
+# Mini project 2
 
 Course project clone for an LLM-powered RESTful translator service, paired with a redesigned web app and Chrome extension that share the same warm, cinematic conversation UI.
 
