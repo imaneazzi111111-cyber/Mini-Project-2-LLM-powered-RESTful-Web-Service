@@ -1,4 +1,4 @@
-# For The Love Of The Game Web App
+# Mini project 2 Web App
 
 Minimal warm-dark browser client for the Darija translator backend.
 
